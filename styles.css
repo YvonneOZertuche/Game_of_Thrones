@@ -10,14 +10,16 @@ h1 {
   text-transform: capitalize;
 }
 
-/* body{
-  background-image: url("https: ; //c4.wallpaperflare.com/wallpaper/204/41/217/game-of-thrones-fantasy-art-braavos-statue-wallpaper-preview.jpg");
+li{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color:maroon;
+  font-weight: bold;
+}
 
-  background-repeat: no-repeat; 
+body{
+  background-image: url("images/images.jpeg");
+ 
 
  
-} */
-/* body{
- background-image: url("images/winter.jpeg");
-
-} */
+} 
