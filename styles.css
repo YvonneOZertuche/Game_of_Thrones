@@ -6,20 +6,20 @@ ul {
 h1 {
   text-align: center;
   font-weight: 100;
-  color: maroon;
+  color: #383838;
   text-transform: capitalize;
 }
 
 li{
   padding-top: 5px;
   padding-bottom: 5px;
-  color:maroon;
-  font-weight: bold;
+  color:#383838;
+  
 }
 
 body{
-  background-image: url("images/images.jpeg");
- 
+  /* background-image: url("images/images.jpeg"); */
+ background-color: #CFD2CF;
 
  
 } 

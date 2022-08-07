@@ -1,10 +1,12 @@
-let nameChar = []
+let listGroupContainer = document.querySelector('.list-group')
+
+let nameChar = [];
 let allHouse = []
 
 const gotMain = async () => {
   let htmlFragment = ''
 
-  //Houses
+  //fetch...Houses
     for (let i = 1; i <= 9; i++) {
       let fetchHouse = await fetch(
         `https://www.anapioficeandfire.com/api/houses?page=${i}&pageSize=50`
@@ -16,7 +18,7 @@ const gotMain = async () => {
       })
     }
 
-  //Character Names
+  //fetch...character Names
     for (let i = 1; i <= 43; i++) {
       let fetchName = await fetch(
         `https://www.anapioficeandfire.com/api/characters?page=${i}&pageSize=50`
@@ -28,6 +30,7 @@ const gotMain = async () => {
       })
     }
 
+//DOM Manipulation
     //creating an element
       let ul = document.querySelector('ul')
       const createElementLi = (charName, nameOfHouse) => {

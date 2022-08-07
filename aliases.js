@@ -1,3 +1,5 @@
+let listGroupContainer = document.querySelector('.list-group')
+let liHtmlFragment = ''
 let nameChar = []
 let allHouse = []
 
@@ -15,6 +17,7 @@ const gotMain = async () => {
       allHouse.push(element)
     })
   }
+console.log(allHouse)
 
   //fetch for character Name
   for (let i = 1; i <= 43; i++) {
@@ -32,32 +35,32 @@ const gotMain = async () => {
   let ul = document.querySelector('ul')
   const createElementLi = (charName, nameOfHouse) => {
     htmlFragment += `
-        <li>${charName}
-        of ${nameOfHouse}.</li>
+        <li>${charName} of
+        ${nameOfHouse}.</li>
         `
     ul.innerHTML = htmlFragment
   }
  
 
-  nameChar.forEach(object => {
-    if (object.allegiances.length == 0) {
-      // console.log(`Sorry, ${object.name} does not have a house.`)
-    } else if (object.allegiances.length != 0) {
-      let houseNumber = object.allegiances[0].slice(45)
-      let houseName = allHouse[houseNumber - 1].name
-      // console.log(`${object.name}'s house is ${houseName}.`)
-      createElementLi(object.name, houseName)
-    }
-  })
+  // nameChar.forEach(object => {
+  //   if (object.allegiances.length == 0) {
+  //     // console.log(`Sorry, ${object.name} does not have a house.`)
+  //   } else if (object.allegiances.length != 0) {
+  //     let houseNumber = object.allegiances[0].slice(45)
+  //     let houseName = allHouse[houseNumber - 1].name
+  //     // console.log(`${object.name}'s house is ${houseName}.`)
+  //     createElementLi(object.name, houseName)
+  //   }
+  // })
 
   let aliases = nameChar
   for (let i = 0; i <= nameChar.length; i++) {  
-    console.log(`${aliases[i].aliases}`)
+    // console.log(`${aliases[i].aliases}`)k
  
   }
 
-console.log(nameChar)
-console.log(allHouse)
+// console.log(nameChar)
+
 
 
 
