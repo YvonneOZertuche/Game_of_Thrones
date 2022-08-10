@@ -2,7 +2,7 @@ let listGroupContainer = document.querySelector('.list-group')
 
 let nameChar = [];
 let allHouse = []
-
+let alias = " "
 const gotMain = async () => {
   let htmlFragment = ''
 
@@ -30,16 +30,24 @@ const gotMain = async () => {
       })
     }
 
+    
+    
 //DOM Manipulation
     //creating an element
       let ul = document.querySelector('ul')
-      const createElementLi = (charName, nameOfHouse) => {
+      const createElementLi = (charName,  nameOfHouse) => {
+        if (charName != 0){
         htmlFragment += `
-        <li>${charName}
-        of ${nameOfHouse}.</li>
-        `
-        ul.innerHTML = htmlFragment
+        <li>
+        ${charName} of ${nameOfHouse}.
+        </li>` 
+      } 
+
+      ul.innerHTML = htmlFragment
+
       }
+
+
     // console.log(nameChar)
     // console.log(allHouse)
 
@@ -53,17 +61,32 @@ const gotMain = async () => {
         createElementLi(object.name, houseName)
       }
     })
+    
+    
 
-    let aliases = nameChar
-    for (let i = 0; i <= nameChar.length; i++){
-    console.log(`${aliases[i].aliases}`)
+    nameChar.forEach(object => {
+      if (object.aliases == 0) {
+        console.log(`${object.name} does not have an alias.`)
+        } else if (object.aliases.length != 0){
+            let nameAlias = object.aliases
+            // console.log(nameAlias)
+            createElementLi(object.name, nameAlias)
+
+        }
+
+    }    )
+    // console.log(`${alias[i].aliases} is the alias of ${nameChar[i].name}`)
+    // console.log(`${nameChar[i].name}'s alias is ${alias[i].aliases} `)
+
+
+ 
+
+
+    
+    
+    
+
+
 }
 
-    
-    
-    
-    
-    }
-
 gotMain()
-
